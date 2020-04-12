@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './products/product-list.component';
 
 //ATTACH THIS DECORATOR TO DEFINE AS AN ANGULAR CLASS
 @NgModule({
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
   //WHICH OF OUR COMPONENTS BELONG TO THIS MODULE.. BY CONVENTION THE ROOT APP COMPONENT BELONGS TO THIS MODULE.. THUS DECLARED HERE, WE CAN ADD OTHERS HERE AS WELL
   declarations: [
     //ALLOWS ANGULAR TO LOCATE IT'S SELECTOR
-    AppComponent
+    AppComponent,
+    ProductListComponent
   ],
 
   //DEFINE EXTERNAL MODULES THAT WE WANT TO HAVE AVAILABLE TO ALL OF THE COMPONENTS THAT BELONG TO THIS ANGULAR MODULE... COULD BE MODS PROVIDED BY ANGULAR, A 3RD PARTY, OR OUR OWN ANGULAR MODULES .. EVERY BROWSER MOD NEEDS THIS
