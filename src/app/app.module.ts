@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
+import { StarComponent } from './shared/star.component';
 
 //ATTACH THIS DECORATOR TO DEFINE AS AN ANGULAR CLASS
 @NgModule({
@@ -18,7 +19,8 @@ import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
     //ALLOWS ANGULAR TO LOCATE IT'S SELECTOR
     AppComponent,
     ProductListComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarComponent
   ],
 
   //DEFINE EXTERNAL MODULES THAT WE WANT TO HAVE AVAILABLE TO ALL OF THE COMPONENTS THAT BELONG TO THIS ANGULAR MODULE... COULD BE MODS PROVIDED BY ANGULAR, A 3RD PARTY, OR OUR OWN ANGULAR MODULES .. EVERY BROWSER MOD NEEDS THIS
