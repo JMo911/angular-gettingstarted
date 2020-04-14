@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
+import { HttpClientModule } from '@angular/common/http'
 
 //ATTACH THIS DECORATOR TO DEFINE AS AN ANGULAR CLASS
 @NgModule({
@@ -28,7 +29,8 @@ import { StarComponent } from './shared/star.component';
     //APP CAN RUN CORRECTLY IN BROWSER
     BrowserModule,
     //external components, pipes, and directives
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
 
   //DEFINES THE STARTUP COMPONENT OF THE APP.. WHICH IS OUR APP COMPONENT... SHOULD CONTAIN THE SELECTOR WE USE IN THE INDEX.HTML FILE... WHICH IN THIS CASE IT DOES
