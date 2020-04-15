@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './products/product-detail.component'
+import { WelcomeComponent } from './home/welcome.component';
+import { RouterModule } from '@angular/router';
 
 //ATTACH THIS DECORATOR TO DEFINE AS AN ANGULAR CLASS
 @NgModule({
@@ -21,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http'
     AppComponent,
     ProductListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent,
+    WelcomeComponent
   ],
 
   //DEFINE EXTERNAL MODULES THAT WE WANT TO HAVE AVAILABLE TO ALL OF THE COMPONENTS THAT BELONG TO THIS ANGULAR MODULE... COULD BE MODS PROVIDED BY ANGULAR, A 3RD PARTY, OR OUR OWN ANGULAR MODULES .. EVERY BROWSER MOD NEEDS THIS
@@ -30,7 +35,14 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     //external components, pipes, and directives
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'products', component: ProductListComponent},
+      {path: 'products/:id', component: ProductDetailComponent},
+      {path: 'welcome', component: WelcomeComponent},
+      {path: '', redirectTo: 'welcome', pathMatch: 'full'},
+      {path: '**', redirectTo: 'welcome', pathMatch: 'full'}
+    ])
   ],
 
   //DEFINES THE STARTUP COMPONENT OF THE APP.. WHICH IS OUR APP COMPONENT... SHOULD CONTAIN THE SELECTOR WE USE IN THE INDEX.HTML FILE... WHICH IN THIS CASE IT DOES
